@@ -1,0 +1,151 @@
+:root {
+  --button-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.4),
+    0 20px 30px rgba(0, 0, 0, 0.6), 0 -10px 20px rgba(0, 0, 0, 0.4);
+  --increase-bg: #039855;
+  --reset-bg: hsl(60, 82%, 51%);
+  --decrease-bg: hsl(0, 72%, 45%);
+  --increase-bg-hover: hsl(153, 96%, 35%);
+  --reset-bg-hover: hsl(60, 82%, 46%);
+  --decrease-bg-hover: hsl(0, 72%, 55%);
+  --button-text-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px; /* Base font size for scaling */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    #f0f0f0,
+    #d9d9d9
+  ); /* Gradient background */
+}
+
+#main-container {
+  border: solid 2px black;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: var(--button-shadow);
+  background-color: whitesmoke;
+  padding: 20px; /* Adding padding inside the container */
+  width: 80%; /* Responsive width */
+  max-width: 600px; /* Limiting maximum width */
+}
+
+#myText {
+  font-family: Arial, sans-serif;
+  font-size: 5em; /* Adjusted size for better scaling */
+  font-weight: 500;
+}
+
+.btn {
+  margin: 10px;
+  min-width: 130px;
+  min-height: 40px;
+  border: none;
+  border-radius: 9px;
+  color: var(--button-text-color);
+  box-shadow: var(--button-shadow);
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+/* For tablets and small desktops */
+@media (max-width: 768px) {
+  #myText {
+    font-size: 4em; /* Adjust font size for smaller screens */
+  }
+
+  .btn {
+    min-width: 100px; /* Adjust button size */
+    min-height: 35px; /* Adjust button size */
+    font-size: 1em; /* Adjust button font size */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 580px) {
+  #myText {
+    font-size: 3em; /* Further reduce font size for mobile screens */
+  }
+
+  .btn {
+    min-width: 80px; /* Adjust button size */
+    min-height: 30px; /* Adjust button size */
+    font-size: 0.9em; /* Adjust button font size */
+  }
+
+  #main-container {
+    width: 90%; /* Increase container width for mobile */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 384px) {
+  #myText {
+    font-size: 2.8em; /* Further reduce font size for mobile screens */
+  }
+
+  .btn {
+    min-width: 70px; /* Adjust button size */
+    min-height: 30px; /* Adjust button size */
+    font-size: 0.9em; /* Adjust button font size */
+  }
+
+  #main-container {
+    width: 90%; /* Increase container width for mobile */
+    padding: 10px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 335px) {
+  #myText {
+    font-size: 2.8em; /* Further reduce font size for mobile screens */
+  }
+
+  #btns {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+#increaseBtn {
+  background-color: var(--increase-bg);
+}
+
+#increaseBtn:hover {
+  background-color: var(--increase-bg-hover);
+}
+
+#resetBtn {
+  background-color: var(--reset-bg);
+}
+
+#resetBtn:hover {
+  background-color: var(--reset-bg-hover);
+}
+
+#decreaseBtn {
+  background-color: var(--decrease-bg);
+}
+
+#decreaseBtn:hover {
+  background-color: var(--decrease-bg-hover);
+}
